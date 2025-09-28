@@ -1,0 +1,333 @@
+nav.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+        background: linear-gradient(to right, rgba(234, 234, 234, 0.5),
+         rgba(219, 219, 219, 0.5),
+         rgba(242, 242, 242, 0.5),
+         rgba(173, 169, 150, 0.5));
+
+
+
+}
+
+nav.navbar.scrolled{
+    background: #ADA996;
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+
+}
+nav.navbar .navbar-brand{
+    width: 8%;
+}
+nav.navbar .nav-item{
+    position: relative;
+}
+nav.navbar .nav-item::after,
+nav.navbar .nav-item::before{
+    content: "";
+    display: block;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    opacity: 0;
+    transition-duration: 0.5s;
+    
+}
+nav.navbar .nav-item::before{
+    border-top: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    top: 0;
+    left:-25%;
+}
+nav.navbar .nav-item.active::before,
+nav.navbar .nav-item:hover::before{
+    left: 0%;
+    opacity: 1;
+}
+nav.navbar .nav-item::after{
+    border-bottom: 1px solid var(--main-color);
+    border-right: 1px solid var(--main-color);
+    bottom: 0;
+    right:-25%;
+}
+nav.navbar .nav-item.active::after,
+nav.navbar .nav-item:hover::after{
+    right: 0%;
+    opacity: 1;
+}
+nav.navbar .nav-item.active a{
+    color: var(--main-color);
+}
+header .sc-carousel{
+    position: relative;
+}
+header .sc-carousel .sc-carousel-inner{
+    position: relative;
+}
+header .sc-carousel .sc-carousel-item{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+
+header .sc-carousel .sc-carousel-item.active{
+    opacity: 1;
+    z-index: 3;
+}
+
+header .sc-carousel .sc-carousel-item:nth-of-type(1){
+    background-image: url(../nike_images/home-bg-1.jpg);
+}
+header .sc-carousel .sc-carousel-item:nth-of-type(2){
+    background-image: url(../nike_images/home-bg-2.jpg);
+}
+header .sc-carousel .sc-carousel-item:nth-of-type(3){
+    background-image: url(../nike_images/home-bg-3.jpg);
+}
+header .sc-carousel .sc-carousel-item .part1,
+header .sc-carousel .sc-carousel-item .part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .sc-carousel .sc-carousel-item .part1 .item{
+    transform: translateX(-60%);
+    opacity: 0;
+    transition-duration: 1s;
+    transition-delay: 1s;
+}
+header .sc-carousel .sc-carousel-item.active.show .part1 .item{
+    transform: translateX(0%);
+    opacity: 1;
+
+}
+header .sc-carousel .sc-carousel-item .part1 h5{
+    color: var(--main-color);
+}
+header .sc-carousel .sc-carousel-item .part1 button{
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    color: var(--main-color);
+}
+header .sc-carousel .sc-carousel-item .part1 button:hover{
+    color: #fff;
+    background-color: var(--main-color);
+}
+header .sc-carousel .sc-carousel-item .part2 .item{
+    position: relative;
+    width: 100%;
+}
+header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(1){
+    position: relative;
+    width: 70%;
+    top: -220px;
+    opacity: 0;transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+header .sc-carousel .sc-carousel-item.active.show .part2 img:nth-of-type(1){
+    opacity: 1;
+    top: 0px;
+}
+header .sc-carousel .sc-carousel-item .part2 img:nth-of-type(2){
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    transform: rotate(0deg) scale(.5);
+    width: 90%;
+    opacity: 0;
+    transition-duration: 1s;
+}
+header .sc-carousel .sc-carousel-item.active.show .part2 img:nth-of-type(2){
+    transform: rotate(-30deg) scale(1);
+    opacity: 1;
+}
+header .sc-carousel>button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border:1px solid var(--main-color);
+    background-color: transparent;
+    transition-duration: 0.5s;
+    margin: 40px;
+    padding: 5px 10px;
+    color: var(--main-color);
+}
+header .sc-carousel>button:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+header .sc-carousel>button.next{
+    right: 20px;
+}
+header .sc-carousel>button.prev{
+    left: 20px;
+}
+#Offer .part1{
+    background-color: #000;
+
+}
+#Offer img{
+    transform: scale(1.1);
+    transition-duration: 1s;
+    
+}
+#Offer .item{
+    position: relative;
+    overflow: hidden;
+}
+#Offer .item:hover img{
+    transform: scale(1);
+}
+#Offer .item::before{
+    content: "";
+    display: block;
+    top: 0;
+    left:100%;
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    transform: rotate(45deg);
+    transition-duration: 1s;
+}
+#Offer .item:hover::before{
+    left: -130%;
+}
+
+
+#Latest .product{
+    border: 1px solid var(--main-color);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+#Latest .product .part1 .listImages li{
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    padding: 10px;
+
+}
+#Latest .product .part1 .listImages li img{
+    cursor: pointer;
+}
+#Latest .product .part1 img{
+    transform: scale(.8);
+    transition-duration: 1s;
+
+}
+#Latest .product .part1 img:hover{
+    transform: scale(1);
+
+}
+
+#Latest .product .part1 .selectedImg{
+    width: 70%;
+    margin: auto;
+    transform: scale(.8);
+    transition-duration: 1s;
+}
+#Latest .product .part1 .selectedImg:hover{
+    transform: scale(1);
+}
+
+.loadingPage{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    z-index: 200;
+    opacity: 1;
+    transition-duration: 1s;
+}
+.loadingPage.hide {
+    opacity: 0;
+}
+#Featured .item{
+    position: relative;
+    overflow: hidden;
+}
+#Featured .item p{
+    position: absolute;
+    top: 5%;
+    right: -40%;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 14px;
+    transform: rotate(45deg);
+    width: 100%;
+}
+
+#Featured .item img{
+    transition-duration: 0.5s;
+}
+#Featured .item:hover img{
+    transform: scale(1.2);
+}
+#Featured .item i{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 100%;
+    box-shadow: 0 10px 15px #0003;
+    position: relative;
+    bottom: 0px;
+    opacity: 0;
+    transform-origin: 1s;
+}
+#Featured .item:hover i{
+    bottom: 40px;
+    opacity: 1;
+    cursor: pointer;
+}
+#Featured .item:hover i:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+#Featured .item ul{
+    position: relative;
+    bottom: -30px;
+    opacity: 0;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+#Featured .item:hover ul{
+    opacity: 1;
+    bottom: 10px;
+    transition-delay: 0.5s;
+}
+#Featured ul li{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+#Featured ul li.active{
+    background-color: var(--main-color);
+
+}
+

@@ -1,0 +1,105 @@
+
+@media (max-width: 1300px) {
+    nav.navbar .navbar-brand {
+    width: 25%;
+}
+    nav img{
+        width: 70px;
+    }
+    nav.navbar .navbar-toggler {
+    
+        border: 1px solid var(--main-color);
+        
+    }
+    .navbar-toggler:focus{
+        box-shadow: none;
+    }
+    .navbar-collapse {
+        text-align: center;
+        background: #ADA996;
+        background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+        background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+
+
+    }
+    .navbar-collapse ul{
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+    }
+
+    
+    header .sc-carousel>button.prev {
+    right: 70px;
+    left: auto;
+
+}
+    header .sc-carousel>button {
+
+    top: 90%;
+
+    }
+    #Home .part1 .item{
+        margin-top: 85px;
+    }
+    .title {
+        margin-bottom: 50px;
+    }
+    .title img {
+    width: 55%;
+}
+    #Featured .content .step{
+        width: 350px !important;
+        margin: auto;
+    }
+    .popup[data-popup-name="product"],
+    .popup[data-popup-name="shop"]
+    {
+        overflow-y: scroll;
+        
+    }
+    .popup[data-popup-name="product"] .box,
+    .popup[data-popup-name="shop"] .box{
+        width: 280px !important;
+        margin: 20px auto;
+    
+}
+    #Latest .item ul{
+        display: flex;
+    }
+    #Latest .item ul li{
+        margin-left: 10px;
+    }
+    #Latest .item ul:last-child{
+        margin-left: 20px;
+    }
+    
+}
+
+@media (min-width: 371px) and (max-width: 1300px) {
+    .popup[data-popup-name="product"] .box,
+    .popup[data-popup-name="shop"] .box{
+        width: 350px !important;
+    
+}
+    
+    
+    
+}
+
+@media (min-width: 577px) and (max-width: 1300px) {}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+    .popup[data-popup-name="product"] .box,
+    .popup[data-popup-name="shop"] .box{
+        width: 750px !important;
+    
+}
+    #Latest .item ul{
+        display: block;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1300px) {}
+
+@media (min-width: 1181px) and (max-width: 1300px) {}
