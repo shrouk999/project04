@@ -1,6 +1,8 @@
 function changeMainColor(colorName){
     let valueOfCurrentColor=getComputedStyle(html).getPropertyValue(colorName);
     changeImg(colorName,Logo,"logo");
+    changeImg(colorName,Icon,"Icon");
+
 
 
     correctImgs.forEach(function(correctImg){
@@ -11,12 +13,21 @@ function changeMainColor(colorName){
 }
 function changeImg(colorName,imgEle,commonName){
     let currentName = colorName.split("-")[2],
-        currentSrcArr = imgEle.src.split("/");
+        attr,
+        currentSrcArr;
+        
+    if(imgEle.src == undefined){
+        attr ="href";
+    }
+    else{
+        attr ="src";
+    }
+    currentSrcArr = imgEle[attr].split("/");
         
     currentSrcArr[currentSrcArr.length - 1]= `${currentName}-${commonName}.png`;
-    let newImgSrc = currentSrcArr.join("/");
+    
 
-    imgEle.src = newImgSrc;
+    imgEle[attr] = currentSrcArr.join("/");
 
 }
 
@@ -124,7 +135,7 @@ function showProuductIntoPopup(productId){
         boxOfProductPopup = document.querySelector(".popup[data-popup-name='product'] .box");
     let isProductIntoCart = cartProducts.filter((item) => {return item.id == product.id;})[0];
     boxOfProductPopup.innerHTML = `
-    <div class="row product data-product-id="${product.id}""
+    <div class="row product" data-product-id="${product.id}"
     data-selected-size="${(isProductIntoCart == undefined) ? product.sizes[0] : isProductIntoCart.size}" 
     data-selected-color="${(isProductIntoCart == undefined) ? product.colors[0] : isProductIntoCart.color}">
         <div class="col-lg-6 col-md-6">
@@ -156,7 +167,7 @@ function showProuductIntoPopup(productId){
                 <div class="specialRow colors">
                     <strong class="me-1">Colors :</strong>
                     <ul type="none" class="d-inline-flex p-0 ">
-                        ${prepareColors(product.colors)}
+                        ${prepareColors(product.colors, isProductIntoCart)}
                                     
                     </ul>
                 </div>
